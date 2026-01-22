@@ -23,6 +23,7 @@ WHY DATA STRUCTURES MATTER:
 # 1. LISTS - Ordered, Mutable Collections
 # ==========================================
 from hmac import new
+from typing import Any
 
 
 print("🛒 LISTS - Ordered, Mutable Collections for example Shopping Bags (Ordered & Mutable)")
@@ -330,3 +331,328 @@ print("❌ Avoid using lists for:")
 print("🔹 Fixed data that won't change for example coordinates, RGB values, security tokens, etc.")
 print("🔹 Funtions that return multiple values")
 print("🔹 Dictionary keys and values")
+
+
+# ==========================================
+# 3. DICTIONARIES - Key-Value Pairs => 
+# ==========================================
+
+print("📚 DICTIONARIES - Recipe Boxes (Key-Value Storage)")
+print("=" * 50)
+
+print(" Creating a dictionaries")
+
+empty_dict = {}
+
+person = {
+    "name" : "John",
+    "age" : 30,    
+}
+
+menu = {
+    "pizza" : 200,
+    "Salad": 100,
+}
+
+
+
+print(f"Empty Dict: {empty_dict}")
+print(f"Person dict: {person}")
+print(f"Menu dict: {menu}")
+
+# Dictionary operations
+print("Dictionary operations:")
+print("=" * 40)
+
+# Accessing values
+print("📋 Accessing values:")
+print(menu["pizza"]) # print the value of the key "pizza" - 200
+print(menu["Salad"]) # print the value of the key "Salad" - 100
+print(menu.get("pizza")) # print the value of the key "pizza" - 200
+print(menu.get("drink")) # print the value of the key "drink" - None
+print(menu.get("drink", "Not found")) # print the value of the key "drink" - Not found
+
+# Accessing keys
+print("📋 Accessing keys:")
+print(menu.keys()) # print the keys of the dictionary - ['pizza', 'Salad'] dict_keys(['pizza', 'Salad'])
+
+# Accessing values
+print("📋 Accessing values:")
+print(menu.values()) # print the values of the dictionary - [200, 100] dict_values([200, 100]) it will return a tuple of values
+
+# Add a key-value pair to the dictionary
+print("📋 Adding a key-value pair to the dictionary:")
+menu["drink"] = 50
+print(menu)
+
+# Update a value
+print("📋 Updating a value:")
+menu["pizza"] = 250
+print(menu)
+
+# modify a key-value pair
+print("📋 Modifying a key-value pair:")
+menu["pizza"] = 300
+print(menu)
+
+# remove a key-value pair from the dictionary
+print("📋 Removing a key-value pair from the dictionary:")
+menu.pop("pizza")
+print(menu)
+
+# remove the last key-value pair from the dictionary
+print("📋 Removing the last key-value pair from the dictionary:")
+menu.popitem()
+print(menu)
+
+# clear the dictionary
+print("📋 Clearing the dictionary:")
+menu.clear()
+print(menu)
+
+# delete the dictionary
+print("📋 Deleting the dictionary:")
+#del menu
+print(menu)
+
+# copy the dictionary
+print("📋 Copying the dictionary:")
+
+new_menu_dict = {
+    "drink": 50,
+    "Salad": 100,
+}
+
+menu_copy = new_menu_dict.copy()
+print(f"Menu copy: {menu_copy}")
+
+# merge two dictionaries
+print("📋 Merging two dictionaries:")
+new_menu_dict.update(menu_copy)
+print(f"New menu dict: {new_menu_dict}")
+
+# iterate over a dictionary
+print("📋 Iterating over a dictionary:")
+for key, value in new_menu_dict.items():
+    print(f"Key: {key}, Value: {value}")
+
+# iterate over a dictionary keys
+print("📋 Iterating over a dictionary keys:")
+for key in new_menu_dict.keys():
+    print(f"Key: {key}")
+
+# iterate over a dictionary values
+print("📋 Iterating over a dictionary values:")
+for value in new_menu_dict.values():
+    print(f"Value: {value}")
+
+
+# nested dictionary
+print("📋 Nested dictionary:")
+nested_dict = {
+    "menu": {
+        "pizza": 200,
+        "Salad": 100,
+    },
+    "contact": {
+        "phone": "123-456-7890",
+        "email": "info@example.com",
+    }
+}
+print(nested_dict)
+
+# access the nested dictionary
+print("📋 Accessing the nested dictionary:")
+print(nested_dict["menu"]["pizza"]) # print the value of the key "pizza" - 200
+print(nested_dict["contact"]["phone"]) # print the value of the key "phone" - 123-456-7890
+print(nested_dict["contact"]["email"]) # print the value of the key "email" - info@example.com
+
+# iterate over a nested dictionary
+print("📋 Iterating over a nested dictionary:")
+for key, value in nested_dict.items():
+    print(f"Key: {key}, Value: {value}")
+
+# iterate over a nested dictionary keys
+print("📋 Iterating over a nested dictionary keys:")
+for key in nested_dict.keys():
+    print(f"Key: {key}")
+
+# iterate over a nested dictionary values
+print("📋 Iterating over a nested dictionary values:")
+for value in nested_dict.values():
+    print(f"Value: {value}")
+
+
+
+# ==========================================
+# 4. SETS - Unordered, Unique Collections => Ingredient Checklists (Unique Items)
+# ==========================================
+
+print("📚 SETS - Ingredient Checklists (Unique Items)")
+print("=" * 50)
+
+print(" Creating a sets")
+
+empty_set = set() # empty set
+print(empty_set)
+
+#create a set with items - values are separated by commas and enclosed in curly braces and 0 based index
+fruits_set = {"apple", "banana", "cherry", "apple", "banana", "cherry"} # filled set - it will remove duplicates
+print(fruits_set) # {'apple', 'banana', 'cherry'}
+
+#mixed set
+print("📋 Mixed set:")
+mixed_set = {1, "apple", True, 3.14} # mixed set
+print(mixed_set)
+
+#nested set
+print("📋 Nested set:")
+nested_set = {(1, 2, 3), (4, 5, 6), (7, 8, 9)} # nested set
+print(nested_set)
+
+#set operations
+print("📋 Set operations:")
+print("=" * 40)
+
+# add an item to the set
+print("📋 Adding an item to the set:")
+fruits_set.add("orange")
+print(fruits_set)
+
+# update a set
+print("📋 Updating a set:")
+fruits_set.update(["orange", "pineapple"])
+print(fruits_set)
+
+# remove an item from the set
+print("📋 Removing an item from the set:")
+fruits_set.remove("banana")
+print(fruits_set)
+
+# remove an item from the set at a specific index
+print("📋 Removing an item from the set at a specific index:")
+fruits_set.pop()
+print(fruits_set)
+
+# remove the last item from the set
+print("📋 Removing the last item from the set:")
+fruits_set.pop()
+print(fruits_set)
+
+# clear the set
+print("📋 Clearing the set:")
+fruits_set.clear()
+print(fruits_set)
+
+# delete the set
+print("📋 Deleting the set:")
+# del fruits_set
+print(fruits_set)
+
+# copy the set
+print("📋 Copying the set:")
+fruits_set_copy = fruits_set.copy()
+print(fruits_set_copy)
+
+# merge two sets
+print("📋 Merging two sets:")
+fruits_set.update(fruits_set_copy)
+print(fruits_set)
+
+# iterate over a set
+print("📋 Iterating over a set:")
+for fruit in fruits_set:
+    print(f"Fruit: {fruit}")
+
+# iterate over a set keys
+print("📋 Iterating over a set keys:")
+for key in fruits_set.keys():
+    print(f"Key: {key}")
+
+# iterate over a set values
+print("📋 Iterating over a set values:")
+for value in fruits_set.values():
+    print(f"Value: {value}")
+
+
+# nested set
+print("📋 Nested set:")
+nested_set = {(1, 2, 3), (4, 5, 6), (7, 8, 9)} # nested set
+print(nested_set)
+
+# access the nested set
+print("📋 Accessing the nested set:")
+print(nested_set[0]) # print the value of the key "0" - (1, 2, 3)
+print(nested_set[0][0]) # print the value of the key "0" - 1
+print(nested_set[0][1]) # print the value of the key "1" - 2
+print(nested_set[0][2]) # print the value of the key "2" - 3
+
+# iterate over a nested set
+print("📋 Iterating over a nested set:")
+for item in nested_set:
+    print(f"Item: {item}")
+
+# iterate over a nested set keys
+print("📋 Iterating over a nested set keys:")
+for key in nested_set.keys():
+    print(f"Key: {key}")
+
+# iterate over a nested set values
+print("📋 Iterating over a nested set values:")
+for value in nested_set.values():
+    print(f"Value: {value}")
+
+
+# Set Math Operations
+print("📋 Set Math Operations:")
+print("=" * 40)
+
+set_a = {1, 2, 3, 4, 5}
+set_b = {4, 5, 6, 7, 8}
+set_c = {9, 10, 11, 12, 13}
+
+# union of two sets
+print("📋 Union of two sets:")
+print(set_a.union(set_b))
+print(set_a | set_b)
+print(set_a.union(set_b, set_c))
+print(set_a | set_b | set_c)
+
+# intersection of two sets
+print("📋 Intersection of two sets:")
+print(set_a.intersection(set_b))
+print(set_a & set_b)
+print(set_a.intersection(set_b, set_c))
+print(set_a & set_b & set_c)
+
+# difference of two sets in A but not in B
+print("📋 Difference of two sets:")
+print(set_a.difference(set_b))
+print(set_a - set_b)
+print(set_a.difference(set_b, set_c))
+print(set_a - set_b - set_c)
+
+# difference of two sets in A but not in B and C
+print("📋 Difference of two sets:")
+print(set_a.difference(set_b, set_c))
+print(set_a - set_b - set_c)
+
+# symmetric difference of two sets
+print("📋 Symmetric difference of two sets:")
+print(set_a.symmetric_difference(set_b))
+print(set_a ^ set_b)
+
+
+
+# Set membership testing (very fast!)
+print("🚀 Set membership testing:")
+large_set = set(range(100000))  # Set with 1000 numbers
+
+import time
+start = time.time()
+result = 999 in large_set  # Very fast lookup
+end = time.time()
+
+print(f"Checking if 999 in large set: {result}")
+print(".6f")
+print(f"Time taken: {end - start} seconds")
